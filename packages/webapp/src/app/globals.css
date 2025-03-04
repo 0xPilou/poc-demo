@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #170117;
+  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #f8f8f8;
+    color: #181818;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 72px; /* This matches the navbar height */
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 48px; /* Adjust for smaller navbar on mobile */
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142 76% 36%;
+    --chart-1: 142 76% 36%;
+    --chart-2: 142 70% 45%;
+    --chart-3: 142 65% 55%;
+    --chart-4: 142 60% 65%;
+    --chart-5: 142 55% 75%;
+    --radius: 0.5rem;
+    --color-primary-50: 0 0% 98%;
+    --color-primary-100: 240 5% 96%;
+    --color-primary-200: 240 6% 90%;
+    --color-primary-300: 240 5% 84%;
+    --color-primary-400: 240 5% 65%;
+    --color-primary-500: 240 4% 46%;
+    --color-primary-600: 240 5% 34%;
+    --color-primary-700: 240 5% 26%;
+    --color-primary-800: 240 4% 16%;
+    --color-primary-900: 240 6% 10%;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 70% 45%;
+    --chart-1: 142 70% 45%;
+    --chart-2: 142 65% 55%;
+    --chart-3: 142 60% 65%;
+    --chart-4: 142 55% 75%;
+    --chart-5: 142 50% 85%;
+    --color-primary-50: 0 0% 98%;
+    --color-primary-100: 240 5% 96%;
+    --color-primary-200: 240 6% 90%;
+    --color-primary-300: 240 5% 84%;
+    --color-primary-400: 240 5% 65%;
+    --color-primary-500: 240 4% 46%;
+    --color-primary-600: 240 5% 34%;
+    --color-primary-700: 240 5% 26%;
+    --color-primary-800: 240 4% 16%;
+    --color-primary-900: 240 6% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
