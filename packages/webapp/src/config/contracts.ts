@@ -1,4 +1,6 @@
-export const CONTRACT_ADDRESS = "0x29754F3d807EC91066cF2693c92922E036E27E08";
+export const CONTRACT_ADDRESS = "0x56849c1C5dfbfa0620215171D1bEF945e22Db551";
+
+export const SUPERTOKEN_ADDRESS = "0xb75F6aEf9F3BcE91856946bcB15B875ddEc68c2D";
 
 export const CONTRACT_ABI = [
   {
@@ -20,11 +22,6 @@ export const CONTRACT_ABI = [
     type: "function",
     name: "createPool",
     inputs: [
-      {
-        name: "_superToken",
-        type: "address",
-        internalType: "contract ISuperToken",
-      },
       { name: "_poolName", type: "string", internalType: "string" },
       { name: "_poolSymbol", type: "string", internalType: "string" },
     ],
@@ -112,6 +109,16 @@ export const ERC20_ABI = [
     name: "symbol",
     outputs: [{ name: "", type: "string" }],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { name: "spender", type: "address" },
+      { name: "amount", type: "uint256" },
+    ],
+    name: "approve",
+    outputs: [{ name: "", type: "bool" }],
+    stateMutability: "nonpayable",
     type: "function",
   },
 ] as const;
