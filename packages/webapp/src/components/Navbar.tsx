@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ConnectButton } from "@/components/ConnectButton";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Droplets, Menu } from "lucide-react";
+import { Cherry, Menu } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -27,7 +27,7 @@ export function Navbar() {
               className="text-xl font-semibold hover:opacity-80 transition-opacity"
             >
               <div className="flex items-center gap-2 font-bold">
-                <Droplets className="h-8 w-8 text-accent" />
+                <Cherry className="h-8 w-8 text-accent" />
                 <span className="text-accent">Web3 Dapp Template</span>
               </div>
             </Link>
