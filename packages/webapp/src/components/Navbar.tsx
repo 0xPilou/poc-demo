@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ConnectButton } from "@/components/ConnectButton";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Cherry, Menu } from "lucide-react";
+import { Cherry, Menu, Home, Droplets, Gift } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -13,8 +13,17 @@ export function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { href: "/", label: "Root Page" },
-    { href: "/page1", label: "Page 1" },
+    { href: "/", label: "Home", icon: <Home className="h-4 w-4 mr-1" /> },
+    {
+      href: "/pools",
+      label: "Pools",
+      icon: <Droplets className="h-4 w-4 mr-1" />,
+    },
+    {
+      href: "/rewards",
+      label: "Rewards",
+      icon: <Gift className="h-4 w-4 mr-1" />,
+    },
   ];
 
   return (
@@ -28,7 +37,7 @@ export function Navbar() {
             >
               <div className="flex items-center gap-2 font-bold">
                 <Cherry className="h-8 w-8 text-accent" />
-                <span className="text-accent">Web3 Dapp Template</span>
+                <span className="text-accent">Superfluid Pools</span>
               </div>
             </Link>
           </div>
@@ -37,8 +46,9 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors px-4 py-2 mx-2"
+                className="relative text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors px-4 py-2 mx-2 flex items-center"
               >
+                {item.icon}
                 {item.label}
                 {pathname === item.href && (
                   <motion.div
@@ -71,9 +81,10 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center"
                 onClick={() => setIsOpen(false)}
               >
+                {item.icon}
                 {item.label}
               </Link>
             ))}
