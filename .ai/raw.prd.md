@@ -13,15 +13,22 @@ For Web3 interactions, you will be using wagmi, viem, and reown web3 libraries.
 
 ## Core Features
 
-### 1. For Community Owner
+### 1. Landing Page
 
-#### 1.1 Create a pool
+- This landing page should be available in the `/` page.
+- It shall display two cards :
+  - A card that target Community owner, describing the benefits of using the platform and with a call to actions that bring them to the `/pools` page.
+  - A card that target Community member, describing the benefits of using the platform and with a call to actions that bring them to the `/rewards` page.
+
+### 2. For Community Owner
+
+#### 2.1 Create a pool
 
 - This feature should be available in the `/pools` page.
 - The page should have a form that allows the user to deploy a new pool by calling the function `createPool` in the `DemoGDA` contract.
 - You shall refer to `packages/contracts/src/DemoGDA.sol` for the function signature.
 
-#### 1.2 Fund a pool
+#### 2.2 Fund a pool
 
 - This feature should be available in the `/pools` page.
 - There are two ways to fund an pool :
@@ -31,19 +38,19 @@ For Web3 interactions, you will be using wagmi, viem, and reown web3 libraries.
 
 - You shall refer to `packages/contracts/src/DemoGDA.sol` for the function signature.
 
-### 2. Community Member
+### 3. Community Member
 
 - This feature should be available in the `/pools` page.
 
-#### 2.1 List of Pools
+#### 3.1 List of Pools
 
-- The `/` page should have a list of all the pools are available to subscribe to.
+- The `/rewards` page should have a list of all the pools are available to subscribe to.
 - The different pools should be cards displayed in a table with the following data displayed :
   - the amount of units that the connected user owns
   - the reward token refer to `DemoGDA.superToken`
   - the current flow rate of the pool
 
-#### 2.2 Subscribe to a Pool
+#### 3.2 Subscribe to a Pool
 
 - In each Pool card, there should be a button that allows the user to collect units from the pool.
 - In each Pool card, there should be a button that allows the user to decrease units from the pool.
@@ -107,6 +114,9 @@ webapp
 ├── tailwind.config.js
 └── tsconfig.json
 ```
+
+The file `webapp/src/config/contracts.ts` contains the deployed contract addresses and ABIs that the app will interact with.
+You will not be modifying this file, unless you are adding new contracts needed for the webapp.
 
 ## Tech Stack
 
