@@ -118,6 +118,8 @@ webapp
 The file `webapp/src/config/contracts.ts` contains the deployed contract addresses and ABIs that the app will interact with.
 You will not be modifying this file, unless you are adding new contracts needed for the webapp.
 
+When you interact with `DemoGDA` contract, you will be referencing the `DEMO_GDA_ABI` and `DEMO_GDA_ADDRESS` variables located in the `webapp/src/config/contracts.ts` file.
+
 ## Tech Stack
 
 This is the tech stack you will be using :
