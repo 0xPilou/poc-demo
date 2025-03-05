@@ -6,6 +6,7 @@ import React, { type ReactNode } from "react";
 import { cookieToInitialState, WagmiProvider, type Config } from "wagmi";
 import { hashFn } from "wagmi/query";
 import { createAppKit } from "@reown/appkit/react";
+import { PoolProvider } from "./PoolContext";
 
 // Set up queryClient
 const queryClient = new QueryClient({
@@ -61,7 +62,9 @@ export default function ContextProvider({
       initialState={initialState}
       reconnectOnMount={true}
     >
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <PoolProvider>{children}</PoolProvider>
+      </QueryClientProvider>
     </WagmiProvider>
   );
 }
