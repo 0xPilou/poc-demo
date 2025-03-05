@@ -36,18 +36,20 @@ For Web3 interactions, you will be using wagmi, viem, and reown web3 libraries.
   - One-off payment (airdrop) - this is achieved by calling the function `airdropDistribution` in the `DemoGDA` contract.
   - Streamed payment (reward stream) - this is achieved by calling the function `startDistribution` in the `DemoGDA` contract.
 
+- when funding a pool, an ERC20 token approval is required - this will be achieve prior to calling the `airdropDistribution` or `startDistribution` function.
+- current ERC20 token allowance will be displayed in the UI and prompt the user to approve the token if the amount is not enough.
 - You shall refer to `packages/contracts/src/DemoGDA.sol` for the function signature.
 
 ### 3. Community Member
 
-- This feature should be available in the `/pools` page.
+- This feature should be available in the `/rewards` page.
 
 #### 3.1 List of Pools
 
 - The `/rewards` page should have a list of all the pools are available to subscribe to.
 - The different pools should be cards displayed in a table with the following data displayed :
   - the amount of units that the connected user owns
-  - the reward token refer to `DemoGDA.superToken`
+  - the reward token refer to `SUPER_TOKEN_ADDRESS` located in `webapp/src/config/contracts.ts`.
   - the current flow rate of the pool
 
 #### 3.2 Subscribe to a Pool
